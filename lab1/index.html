@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>Evilla</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav class="navbar">
-        <p class="logo"><img src="assets/logo.svg"/></p>
+        <p class="logo"><img src="assets/logo.svg" /></p>
         <ul class="menu">
             <li><a class="menu-item" href="#">Home</a></li>
             <li><a class="menu-item" href="#">About</a></li>
@@ -21,11 +23,52 @@
     <section id="hero-section" class="hero-section grid">
         <div class="hero-login">
             <div class="hero-login-img">
-                <h3 class="black">Find your dream home today!</h3>
-                <p class="black">Log in and book a house tour with our real estate agent!</p>
+                <h3>Find your dream home today!</h3>
+                <p>Log in and book a house tour with our real estate agent!</p>
             </div>
+            <div>
+                <p><label>Login</label></p>
+                <input type="text" />
+            </div>
+            <div>
+                <p><label>Password</label></p>
+                <input type="password" />
+                <div class="hero-login-links">
+                    <span> No account? <a class="copy-brown hero-links" href="#">Register</a></span>
+                    <a class="hero-links" href="#">Forgot password</a>
+                </div>
+            </div>
+            <button class="primary-brown" type="submit">Log in</button>
         </div>
         <img class="hero-image" src="assets/hero image.png" alt="Hero house">
     </section>
+    <section id="about-section" class="about-section grid">
+       <div class="about-section-text">
+            <h3>At Evilla we help you turn the key to your future</h3>
+       </div> 
+       <div class="about-content">
+            <div class="about-content-left">
+                <article class="about-content-box">
+                    <h4>Expertise</h4>
+                    <p>Our real estate company has a team of highly skilled professionals who possess extensive knowledge of the real estate market, ensuring that our clients receive the best possible advice and guidance.</p>
+                </article>
+                <article class="about-content-box">
+                    <h4>Trustworthy</h4>
+                    <p>We have built a reputation of being a trustworthy real estate company that operates with honesty, transparency, and integrity. Our clients can rely on us to always act in their best interests.</p>
+                </article>
+            </div>
+            <div class="about-content-right">
+                <article class="about-content-box">
+                    <h4>Personalized Service</h4>
+                    <p>We understand that each client has unique needs and preferences, which is why we provide personalized service that is tailored to meet individual requirements.</p>
+                </article>
+                <article class="about-content-box">
+                    <h4>Exceptional Results</h4>
+                    <p>We have a track record of achieving exceptional results for our clients, whether it's finding the perfect home, securing a profitable investment property, or selling a property at the best possible price. </p>
+                </article>
+            </div>
+       </div>
+    </section>
 </body>
+
 </html>

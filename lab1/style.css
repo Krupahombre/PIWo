@@ -24,6 +24,10 @@
     --shadow: 0px 4px 16px rgba(67, 81, 80, 0.1);
 }
 
+.copy-brown {
+    color: var(--copy-brown);
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -33,6 +37,12 @@ h3 {
     font-weight: bold;
     text-align: center;
     line-height: 2.75rem;
+}
+
+h4 {
+    font-size: var(--medium-font-size);
+    font-weight: bold;
+    text-align: center;
 }
 
 p {
@@ -47,6 +57,7 @@ p {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--black);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -98,10 +109,10 @@ button{
     border: none;
     outline: none;
     padding: 15px;
-    gap: 10px;
     font-size: var(--small-font-size);
     border-radius: var(--inner-radius);
     cursor: pointer;
+    width: fit-content;
 }
 
 .primary-brown {
@@ -124,17 +135,86 @@ button{
 }
 
 .hero-login {
-    grid-column: 2/5;
+    grid-column: 2/6;
     display: flex;
     flex-direction: column;
-    row-gap: 3.625rem;
+    row-gap: 2rem;
     justify-content: flex-start;
 }
 
 .hero-login-img {
     background-image: url('assets//dots hero section.svg');
-    background-size: 50%;
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.hero-login-links {
+    padding: 0.5rem 0rem;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-links {
+    text-decoration: none;
+}
+
+input {
+    border: 1px solid var(--primary-blue);
+    padding: 1.1rem;
+    border-radius: 0.2rem;
+    font-size: var(--medium-font-size);
+    width: 100%;
+}
+
+.hero-login > div:not(:first-of-type) p {
+    text-align: left;
+}
+
+.hero-login > button {
+    align-self: center;
+}
+
+.about-section {
+    min-height: 100vh;
+    height: auto;
+    padding: 100px 0px;
+}
+
+.about-section-text {
+    background-image: url('assets//dots about section.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+    padding: 1rem 1.5rem;
+    grid-column: 4/10;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.about-content {
+    grid-column: 1/13;
+    display: flex;
+    flex-direction: row;
+    padding: 3rem 3rem;
+    column-gap: 20px;
+    background-color: var(--secondary-brown);
+}
+
+.about-content-left {
+    grid-column: 2/7;
+    display: grid;
+}
+
+.about-content-right {
+    grid-column: 7/13;
+    display: grid;
+}
+
+.about-content-box {
+    background-color: var(--white);
+    padding: 1rem 1rem;
 }
