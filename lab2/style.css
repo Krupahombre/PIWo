@@ -1,0 +1,24 @@
+li {
+    display:table;
+    margin: 0px auto 0px auto;
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.todo-done {
+    background-color: grey;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.input-section {
+    display: flex;
+    margin: 1rem 0rem;
+    justify-content: center;
+    column-gap: 2rem;
+}
