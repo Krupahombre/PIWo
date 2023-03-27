@@ -6,3 +6,11 @@ Technologies:
 - HTML
 - CSS
 - JavaScript
+
+# lab1
+
+Simple web page
+
+# lab2
+
+ToDo list
