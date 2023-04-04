@@ -23,5 +23,15 @@
     <div class="list-group">
         <ul id="todoList"></ul>
     </div>
+
+    <dialog id="dialog">
+        <form method="dialog" class="body-dialog">
+            <p>Are you sure you want to delete this item?</p>
+            <menu style="padding: 0;">
+                <button id="submit-button" class="btn btn-outline-danger">Delete</button>
+                <button id="cancel-button" class="btn btn-outline-success" onclick="closeDialog()">Cancel</button>
+            </menu>
+        </form>
+    </dialog>    
 </body>
 </html>

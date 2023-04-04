@@ -1,14 +1,20 @@
-"use strict"
+"use strict";
 
 let deletedDiv = null;
 
 const addNewToDoElement = () => {
+    const userInput = document.createTextNode(document.getElementById("todoInput").value);
+
+    if(userInput.textContent === "") {
+        alert("Please enter a task!");
+        return;
+    }
+
     const div = document.createElement("div");
     const divTask = document.createElement("div");
     const divButton = document.createElement("div");
     const pForUserInput = document.createElement("p");
     const deleteButton = document.createElement("button");
-    const userInput = document.createTextNode(document.getElementById("todoInput").value);
 
     // clear input field
     const inputField = document.getElementById("todoInput");
@@ -60,10 +66,16 @@ const addNewToDoElement = () => {
     document.getElementById("todoList").append(div);
 }
 
+const closeDialog = () => $('#dialog').hide();
+
 const removeToDoElement = (e, div) => {
     e.stopPropagation();
-    deletedDiv = div;
-    $(div).remove();
+    $('#submit-button').off('click').click(() => {
+        deletedDiv = div;
+        $(div).remove();
+        closeDialog();
+    });
+    $('dialog').show();
 }
 
 $(document).keydown((e) => {

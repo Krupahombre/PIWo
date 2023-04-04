@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
 :root {
     --outer-radius: 1rem;
     --inner-radius: 0.25rem;
+}
+
+h1{
+    font-family: 'Delicious Handrawn', sans-serif;
+    font-size: 64px;
 }
 
 body {
@@ -77,4 +84,17 @@ input {
 
 .btn-danger:hover {
     background-color: darkred;
+}
+
+dialog{
+    position: absolute;
+    border-radius: var(--outer-radius);
+    top: 7%;
+}
+
+.body-dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
