@@ -1,34 +1,76 @@
+"use strict"
+
+let deletedDiv = null;
+
 const addNewToDoElement = () => {
-    const li = document.createElement("li");
+    const div = document.createElement("div");
+    const divTask = document.createElement("div");
+    const divButton = document.createElement("div");
     const pForUserInput = document.createElement("p");
+    const deleteButton = document.createElement("button");
     const userInput = document.createTextNode(document.getElementById("todoInput").value);
 
-    pForUserInput.append(userInput)
-    li.appendChild(pForUserInput);
+    // clear input field
+    const inputField = document.getElementById("todoInput");
+    inputField.value = "";
 
-    li.className = "list-group-item";
+    deleteButton.className = "btn btn-danger btn-sm float-right";
+    deleteButton.innerHTML = "X";
 
-    li.onclick = () => {
-        pForUserInput.classList.toggle("line-through");
-        const bool = li.classList.toggle("todo-done");
+    deleteButton.onclick = (e) => removeToDoElement(e, div);
 
-        if(bool) {
-            const p = document.createElement("p");
+    divButton.append(deleteButton);
 
-            let d = new Date();
+    pForUserInput.append(userInput);
+    divTask.style = "max-width: 95%";
+    divTask.append(pForUserInput);
 
-            let date = d.toLocaleString();
+    div.appendChild(divTask);
+    div.appendChild(divButton);
 
-            p.append(date);
-            li.appendChild(p);
+    div.className = "list-group-item";
+    div.style = "border-radius: 0.75rem; display: block;";
+
+    div.onclick = () => {
+            pForUserInput.classList.toggle("line-through");
+            const bool = div.classList.toggle("todo-done");
+    
+            if(bool) {
+                const p = document.createElement("p");
+    
+                let d = new Date();
+    
+                let date = d.toLocaleString();
+    
+                p.append(date);
+                divTask.appendChild(p);
+            }
+            else {
+                div.innerHTML = "";
+                divTask.innerHTML = "";
+                pForUserInput.innerHTML = "";
+                pForUserInput.append(userInput);
+                divTask.append(pForUserInput);
+                divButton.append(deleteButton);
+                div.appendChild(divTask);
+                div.appendChild(divButton);
+            }
         }
-        else {
-            li.innerHTML = "";
-            pForUserInput.innerHTML = "";
-            pForUserInput.append(userInput)
-            li.append(pForUserInput);
+
+    document.getElementById("todoList").append(div);
+}
+
+const removeToDoElement = (e, div) => {
+    e.stopPropagation();
+    deletedDiv = div;
+    $(div).remove();
+}
+
+$(document).keydown((e) => {
+    if(e.ctrlKey && e.key === "z") {
+        if(deletedDiv !== null) {
+            $("#todoList").append(deletedDiv);
+            deletedDiv = null;
         }
     }
-
-    document.getElementById("todoList").append(li);
-}
+});

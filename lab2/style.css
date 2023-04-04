@@ -1,15 +1,50 @@
+:root {
+    --outer-radius: 1rem;
+    --inner-radius: 0.25rem;
+}
+
+body {
+    background: rgb(0,212,255);
+    background: linear-gradient(180deg, rgba(0,212,255,1) 0%, rgba(165,247,250,1) 50%, rgba(255,255,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ul {
+    padding: 0 0;
+}
+
 li {
-    display:table;
+    display: table;
     margin: 0px auto 0px auto;
     width: 50%;
+    word-break: break-word;
 }
 
 h1 {
     text-align: center;
 }
 
+input {
+    border: none;
+    outline: none;
+    border-radius: var(--inner-radius);
+}
+
+.list-group-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto 0px auto;
+    width: 50%;
+    word-break: break-word;
+}
+
 .todo-done {
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 .line-through {
@@ -21,4 +56,25 @@ h1 {
     margin: 1rem 0rem;
     justify-content: center;
     column-gap: 2rem;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    border-radius: var(--inner-radius);
+}
+
+.btn-danger {
+    background-color: red;
+    color: white;
+    transition: 0.3s;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.btn-danger:hover {
+    background-color: darkred;
 }
