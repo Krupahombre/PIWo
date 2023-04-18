@@ -1,0 +1,20 @@
+.filter {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    padding: 1rem;
+    max-width: 80vw;
+    column-gap: 2rem;
+    align-self: center;
+}
+
+.filter-label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+}

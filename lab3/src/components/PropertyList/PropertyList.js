@@ -1,5 +1,6 @@
 import React from 'react';
 import Property from './Property/Property';
+import './PropertyList.css';
 
 function PropertyList({ properties }) {
   let counter = 1;
