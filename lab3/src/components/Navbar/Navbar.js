@@ -10,9 +10,9 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar navbar-dark bg-primary">
       <div className="container">
-        <a className="navbar-brand" href="#">Properties for rent</a>
+        <a className="navbar-brand" href="#">Choose your dream property!</a>
         <div className="button-container">
           <button className="btn btn-outline-light me-2">Contact</button>
           <button className="btn btn-outline-light" onClick={handleAddNewClick}>Add new</button>

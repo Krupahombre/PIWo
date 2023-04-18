@@ -1,5 +1,33 @@
 [
   {
+    "city": "Kraków",
+    "address": "ul. Szewska 7",
+    "bedrooms": 1,
+    "price": 1500,
+    "description": "Nowoczesne mieszkanie w samym sercu Krakowa"
+  },
+  {
+    "city": "Gdańsk",
+    "address": "ul. Długa 15",
+    "bedrooms": 4,
+    "price": 3000,
+    "description": "Piękne mieszkanie z widokiem na Starówkę w Gdańsku"
+  },
+  {
+    "city": "Poznań",
+    "address": "ul. Wrocławska 9",
+    "bedrooms": 2,
+    "price": 2200,
+    "description": "Nowoczesne mieszkanie w pobliżu Starego Rynku w Poznaniu"
+  },
+  {
+    "city": "Wrocław",
+    "address": "ul. Świdnicka 10",
+    "bedrooms": 1,
+    "price": 1800,
+    "description": "Eleganckie mieszkanie w samym centrum Wrocławia"
+  },
+  {
     "city": "Warszawa",
     "address": "ul. Nowogrodzka 11",
     "bedrooms": 2,
@@ -7,39 +35,11 @@
     "description": "Przestronne mieszkanie w centrum Warszawy"
   },
   {
-    "city": "Kraków",
-    "address": "ul. Karmelicka 21",
+    "city": "Katowice",
+    "address": "ul. Mariacka 8",
     "bedrooms": 3,
-    "price": 3000,
-    "description": "Świetnie skomunikowane mieszkanie w samym sercu Krakowa"
-  },
-  {
-    "city": "Gdańsk",
-    "address": "ul. Długa 15",
-    "bedrooms": 1,
-    "price": 1500,
-    "description": "Urocze mieszkanie na Starym Mieście w Gdańsku"
-  },
-  {
-    "city": "Poznań",
-    "address": "ul. Wrocławska 12",
-    "bedrooms": 2,
-    "price": 1800,
-    "description": "Nowoczesne mieszkanie w centrum Poznania"
-  },
-  {
-    "city": "Wrocław",
-    "address": "ul. Piłsudskiego 24",
-    "bedrooms": 4,
-    "price": 3500,
-    "description": "Eleganckie mieszkanie w prestiżowej lokalizacji we Wrocławiu"
-  },
-  {
-    "city": "Szczecin",
-    "address": "ul. Monte Cassino 8",
-    "bedrooms": 1,
-    "price": 1200,
-    "description": "Przytulne mieszkanie w zacisznej okolicy Szczecina"
+    "price": 2800,
+    "description": "Nowoczesne mieszkanie w pobliżu Starego Miasta w Katowicach"
   }
 ]
   

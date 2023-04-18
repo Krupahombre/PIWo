@@ -3,11 +3,17 @@
     height:200px;
     border-radius:1rem;
     overflow:hidden;
+    transition: transform 0.5s;
 }
 
 .property-image:hover {
+    animation: zoom-in 0.3s ease-out forwards;
     transform: scale(1.1);
-    transition: transform 0.5s;
+}
+  
+.property-image:not(:hover) {
+    animation: zoom-out 0.3s ease-out forwards;
+    transform: scale(1);
 }
 
 .listing-container {
@@ -25,13 +31,37 @@
     align-items: flex-start;
     justify-content: center;
     border-radius:1rem;
-    background-color: #FFF8E4;
+    background-color: #7cb3f1;
     overflow: clip;
     padding: 0.5rem;
     text-align: left;
+    transition: transform 0.5s;
 }
 
 .listing-details:hover {
+    animation: zoom-in 0.3s ease-out forwards;
     transform: scale(1.1);
-    transition: transform 0.5s;
+}
+
+.listing-details:not(:hover) {
+    animation: zoom-out 0.3s ease-out forwards;
+    transform: scale(1);
+}
+
+@keyframes zoom-in {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
 }

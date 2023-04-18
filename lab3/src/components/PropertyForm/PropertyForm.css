@@ -4,7 +4,7 @@
     place-content: center;
     justify-content: space-around;
     margin: 1rem;
-    background-color: #FFF8E4;
+    background-color: #7cb3f1;
     width: 30vw;
     row-gap: 1rem;
     padding: 1rem;
@@ -21,9 +21,9 @@
     font-weight: bold;
 }
 
-.btn-outline-dark{
+.btn-outline-light{
     align-self: center;
-    background-color: #FFF8E4;
+    background-color: #7cb3f1;
 }
 
 .listing-form-container {

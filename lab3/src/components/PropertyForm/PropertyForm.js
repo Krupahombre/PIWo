@@ -29,7 +29,7 @@ function AddProperty({handler}) {
 
   return (
     <div className="listing-form-container">
-      <h1>Add new listing</h1>
+      <h1>Add new property!</h1>
 
       <form className="listing-form" onSubmit={handleSubmit}>
         <label className="property">
@@ -57,7 +57,7 @@ function AddProperty({handler}) {
           <textarea rows={10} value={description} onChange={(event) => setDescription(event.target.value)} />
         </label>
 
-        <button type="submit" className="btn btn-outline-dark" onClick={handleSubmit}>Add</button>
+        <button type="submit" className="btn btn-outline-light btn-lg" onClick={handleSubmit}>Add</button>
       </form>
     </div>
   );
