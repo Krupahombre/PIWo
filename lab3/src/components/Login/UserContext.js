@@ -4,7 +4,12 @@ import usersData from './UsersData';
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const userFormLocalStorage = JSON.parse(localStorage.getItem('loggedInUser'));  
+  let userFormLocalStorage = null;  
+  try {
+    userFormLocalStorage = JSON.parse(localStorage.getItem('loggedInUser'));
+  } catch (error) {
+    console.error('Error getting user from local storage', error);
+  }
   const [loggedInUser, setLoggedInUser] = useState(userFormLocalStorage);
 
   const login = (email, password) => {
