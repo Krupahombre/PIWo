@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router';
+import axios from 'axios';
 import './App.css';
+import { UserProvider } from './login/UserContext';
 
 import PropertyList from './components/PropertyList/PropertyList';
 import PropertyForm from './components/PropertyForm/PropertyForm';
 import Filter from './components/Filter/Filter';
 import Navbar from './components/Navbar/Navbar';
-import propertiesData from './data/properties.json';
+import Login from './login/Login';
 
 function App() {
-  const [sortBy, setSortBy] = useState('');
+    const [sortBy, setSortBy] = useState('');
     const [priceFilter, setPriceFilter] = useState('');
     const [roomsFilter, setRoomsFilter] = useState('');
     const [cityFilter, setCityFilter] = useState('');
-    const [properties, setProperties] = useState(propertiesData);
+    const [properties, setProperties] = useState([]);
+
+    useEffect(() => {
+        axios.get('/data/properties.json')
+          .then(response => {
+            setProperties(response.data);
+          })
+          .catch(error => {
+            console.error('Error fetching properties:', error);
+          });
+    }, []);
 
     const handleNewPropertySubmit = (newProperty) => {
         setProperties([...properties, newProperty]);
@@ -59,6 +71,7 @@ function App() {
 
 
     return (
+        <UserProvider>
         <div className="App">
             <Routes>
                 <Route exact path="/" element={
@@ -78,11 +91,14 @@ function App() {
                     </>
                 }/>
 
+                <Route path="/login" element={<Login />} />
+
                 <Route path="/add" element={
                     <PropertyForm handler={handleNewPropertySubmit}/>
                 }/>
             </Routes>
         </div>
+        </UserProvider>
     );
 }
 

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../login/UserContext';
 import './Navbar.css';
 
 function Navbar() {
   const navigate = useNavigate();
+  const { loggedInUser, logout } = useContext(UserContext);
+
+  const handleLogout = () => {
+    logout();
+  };
 
   const handleAddNewClick = () => {
     navigate('/add');
@@ -14,7 +21,18 @@ function Navbar() {
       <div className="container">
         <a className="navbar-brand" href="#">Choose your dream property!</a>
         <div className="button-container">
-          <button className="btn btn-outline-light me-2">Contact</button>
+          
+          {loggedInUser ? (
+              <div className="user-info">
+                Hello, {loggedInUser.firstName} {loggedInUser.lastName}!
+              <button className="btn btn-outline-light" onClick={handleLogout}>Log out</button>
+            </div>
+          ) : (
+            <div className="login-links">
+              <Link to="/login">Log in</Link>
+            </div>
+          )}
+
           <button className="btn btn-outline-light" onClick={handleAddNewClick}>Add new</button>
         </div>
       </div>
