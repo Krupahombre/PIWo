@@ -6,6 +6,7 @@ Technologies:
 - HTML
 - CSS
 - JavaScript
+- React
 
 # lab1
 
@@ -14,3 +15,7 @@ Simple web page
 # lab2
 
 ToDo list
+
+# lab3
+
+Home booking web page
