@@ -6,7 +6,7 @@ function PropertyList({ properties }) {
   let counter = 1;
 
   return (
-    <div>
+    <div className='properties-list'>
       {properties.map((property) => (
         <Property key={counter++} {...property} />
       ))}
