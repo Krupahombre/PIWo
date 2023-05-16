@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../login/UserContext';
+import { UserContext } from '../Login/UserContext';
 import './Navbar.css';
 
 function Navbar() {
@@ -10,6 +10,10 @@ function Navbar() {
 
   const handleLogout = () => {
     logout();
+  };
+
+  const handleLoginRedirect = () => {
+    navigate('/login');
   };
 
   const handleAddNewClick = () => {
@@ -23,14 +27,14 @@ function Navbar() {
         <div className="button-container">
           
           {loggedInUser ? (
-              <div className="user-info">
+            <div className="user-info">
+              <div className='user-logged'>
                 Hello, {loggedInUser.firstName} {loggedInUser.lastName}!
-              <button className="btn btn-outline-light" onClick={handleLogout}>Log out</button>
+              </div>  
+              <button className="btn btn-outline-light" onClick={handleLogout}>Sign out</button>
             </div>
           ) : (
-            <div className="login-links">
-              <Link to="/login">Log in</Link>
-            </div>
+            <button className="btn btn-outline-light" onClick={handleLoginRedirect}>Sign in</button>
           )}
 
           <button className="btn btn-outline-light" onClick={handleAddNewClick}>Add new</button>

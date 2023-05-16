@@ -4,7 +4,8 @@ import usersData from './UsersData';
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  const userFormLocalStorage = JSON.parse(localStorage.getItem('loggedInUser'));  
+  const [loggedInUser, setLoggedInUser] = useState(userFormLocalStorage);
 
   const login = (email, password) => {
     const user = usersData.find(
@@ -12,11 +13,13 @@ const UserProvider = ({ children }) => {
     );
 
     if (user) {
+      localStorage.setItem('loggedInUser', JSON.stringify(user));  
       setLoggedInUser(user);
     }
   };
 
   const logout = () => {
+    localStorage.removeItem('loggedInUser');
     setLoggedInUser(null);
   };
 
