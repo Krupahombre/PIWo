@@ -11,16 +11,6 @@
     border-radius:1rem;
 }
 
-.label-input {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    align-items: center;
-    width: 15vw;
-    padding: 1rem;
-    font-weight: bold;
-}
-
 .btn-outline-light{
     align-self: center;
     background-color: #7cb3f1;
@@ -30,4 +20,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.login-providersLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
 }

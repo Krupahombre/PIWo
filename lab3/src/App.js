@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 import axios from 'axios';
 import './App.css';
-import { UserProvider } from './components/Login/UserContext';
 
 import PropertyList from './components/PropertyList/PropertyList';
 import PropertyForm from './components/PropertyForm/PropertyForm';
@@ -72,7 +71,6 @@ function App() {
 
 
     return (
-        <UserProvider>
         <div className="App">
             <Routes>
                 <Route exact path="/" element={
@@ -100,7 +98,6 @@ function App() {
                 }/>
             </Routes>
         </div>
-        </UserProvider>
     );
 }
 

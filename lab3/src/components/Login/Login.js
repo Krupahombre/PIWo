@@ -1,42 +1,38 @@
-import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from './UserContext';
+import { logInWithGoogle, logInWithGithub } from '../../Firebase/UserService';
+import { BsGoogle, BsGithub } from "react-icons/bs";
 import './Login.css';
 
 const Login = () => {
     const navigate = useNavigate();
-    const { login } = useContext(UserContext);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleGoogleLogin = (e) => {
         e.preventDefault();
-        login(email, password);
-        navigate('/');
+        logInWithGoogle()
+            .then(() => {
+                navigate('/');
+            }
+        );
+    };
+
+    const handleGithubLogin = (e) => {
+        e.preventDefault();
+        logInWithGithub()
+            .then(() => {
+                navigate('/');
+            }
+        );
     };
 
     return (
         <div className='login-form-container'>
             <h2>Sign in to Give Me A House</h2>
 
-            <form className='login-form' onSubmit={handleSubmit}>
-                <label className='label-input'>
-                Email:
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                </label>
-                <label className='label-input'>
-                Password:
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                </label>
-                <button type="submit" className="btn btn-outline-light btn-lg" onClick={handleSubmit}>Sign in</button>
+            <form className='login-form'>
+                <div className='login-providersLogin'>
+                    <button type="button" className="btn btn-outline-light btn-lg" onClick={handleGoogleLogin}><BsGoogle /> Sign in with Google</button>
+                    <button type="button" className="btn btn-outline-light btn-lg" onClick={handleGithubLogin}><BsGithub /> Sign in with GitHub</button>
+                </div>
             </form>
         </div>
     );
