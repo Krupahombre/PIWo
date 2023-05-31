@@ -7,6 +7,8 @@ Technologies:
 - CSS
 - JavaScript
 - React
+- Firebase
+- Docker
 
 # lab1
 
